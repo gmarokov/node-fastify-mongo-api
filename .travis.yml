@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - '12'
+  - '10'
+branches:
+  only:
+    - master
+cache:
+  npm: true
+services:
+  - mongodb
+before_script:
+  - npm install
+os:
+  - linux

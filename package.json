@@ -1,0 +1,44 @@
+{
+    "name": "node-api-starter",
+    "version": "1.0.0",
+    "description": "Node Restful API starter project",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run build && node build/index.js",
+        "start:dev": "nodemon",
+        "build": "rimraf ./build && tsc",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint --fix {src,test,config}/**/*.{js,ts}",
+        "prettier": "prettier",
+        "prettier:base": "npm run prettier **/*.{js,json,scss,md,ts,html,component.html}",
+        "prettier:write": "npm run prettier:base --write",
+        "prettier:check": "npm run prettier:base --list-different"
+    },
+    "keywords": [
+        "node",
+        "mongo",
+        "mongoose",
+        "fastify"
+    ],
+    "author": "Georgi Marokov <georgi.marokov@gmail.com> (www.worldwildweb.dev)",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^13.7.1",
+        "nodemon": "^2.0.2",
+        "prettier": "^1.19.1",
+        "rimraf": "^3.0.2",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.7.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/gmarokov/node-api-starter.git"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.19.2",
+        "@typescript-eslint/parser": "^2.19.2",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-prettier": "^3.1.2"
+    }
+}
