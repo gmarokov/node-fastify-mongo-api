@@ -1,7 +1,7 @@
 {
     "name": "node-api-starter",
     "version": "1.0.0",
-    "description": "Node Restful API starter project",
+    "description": "NodeJS Restful API starter project",
     "main": "index.js",
     "scripts": {
         "start": "npm run build && node build/index.js",
@@ -35,10 +35,16 @@
         "url": "git://github.com/gmarokov/node-api-starter.git"
     },
     "dependencies": {
+        "@types/boom": "^7.3.0",
+        "@types/mongoose": "^5.7.1",
         "@typescript-eslint/eslint-plugin": "^2.19.2",
         "@typescript-eslint/parser": "^2.19.2",
+        "boom": "^7.3.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.0",
-        "eslint-plugin-prettier": "^3.1.2"
+        "eslint-plugin-prettier": "^3.1.2",
+        "fastify": "^2.12.0",
+        "fastify-swagger": "^2.5.0",
+        "mongoose": "^5.8.12"
     }
 }
