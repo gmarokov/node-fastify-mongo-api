@@ -1,12 +1,12 @@
 import * as carsController from '../controllers/carsController';
 import { RouteOptions } from 'fastify';
+import { AddCarSchema } from './documentation/carsApi';
 
 const getCarsRoute: RouteOptions = {
 	method: 'GET',
 	url: '/api/cars',
 	handler: carsController.getCars,
 };
-
 const getCarRoute: RouteOptions = {
 	method: 'GET',
 	url: '/api/cars/:id',
@@ -16,6 +16,7 @@ const postCarRoute: RouteOptions = {
 	method: 'POST',
 	url: '/api/cars',
 	handler: carsController.addCar,
+	schema: AddCarSchema,
 };
 const putCarRoute: RouteOptions = {
 	method: 'PUT',
