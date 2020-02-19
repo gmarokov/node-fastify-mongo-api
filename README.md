@@ -19,6 +19,7 @@ NodeJS Restful API starter template with TypeScript, Fastify, MongoDB, Jest and 
 ## Testing 
 Using Jest for endpoint integration testing and swaping MongoDB with in memory. 
 Code coverage report generated and consumed by [Coveralls](https://coveralls.io/).   
+1. Run tests with coverage:   
 `npm test`
 
 ## Documentation 
