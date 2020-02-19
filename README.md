@@ -9,9 +9,12 @@ NodeJS Restful API starter template with TypeScript, Fastify, Mongo, Jest and Sw
 2. NodeJS >= 10
 
 ## Getting started
-1. Install packages: `npm install`
-3. Run project: `npm run start:dev`
-4. Run ESLint with Prettier for static analysis and applying consistent code formatting : `npm run lint`
+1. Install packages: 
+`npm install`
+3. Run project: 
+`npm run start:dev`
+4. Run ESLint with Prettier for static analysis and applying consistent code formatting : 
+`npm run lint`
 
 ## Testing 
 Using Jest for endpoint integration testing and mocking Mongo using in memory DB. 
