@@ -4,10 +4,10 @@
     "description": "NodeJS Restful API starter project",
     "main": "index.js",
     "scripts": {
-        "start": "npm run build && node build/index.js",
+        "start": "npm run build && node dist/index.js",
         "start:dev": "docker-compose up -d && nodemon",
         "build": "rimraf ./build && tsc",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit --coverage",
         "lint": "eslint --fix {src,test,config}/**/*.{js,ts}",
         "prettier": "prettier",
         "prettier:base": "npm run prettier **/*.{js,json,scss,md,ts,html,component.html}",
@@ -23,16 +23,20 @@
     "author": "Georgi Marokov <georgi.marokov@gmail.com> (www.worldwildweb.dev)",
     "license": "ISC",
     "devDependencies": {
+        "@types/jest": "^25.1.2",
         "@types/node": "^13.7.1",
+        "cross-env": "^7.0.0",
+        "jest": "^25.1.0",
         "nodemon": "^2.0.2",
         "prettier": "^1.19.1",
         "rimraf": "^3.0.2",
+        "ts-jest": "^25.2.0",
         "ts-node": "^8.6.2",
         "typescript": "^3.7.5"
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/gmarokov/node-api-starter.git"
+        "url": "git://github.com/gmarokov/node-fastify-mongo-api.git"
     },
     "dependencies": {
         "@types/boom": "^7.3.0",

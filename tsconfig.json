@@ -11,6 +11,7 @@
         "strict": true,
         "noImplicitAny": true,
         "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true
-    }
+        "forceConsistentCasingInFileNames": true,
+    },
+    "exclude": ["node_modules", "**/*.spec.ts"]
 }

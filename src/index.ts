@@ -5,29 +5,31 @@ import { Options } from './config/swagger';
 import swagger from 'fastify-swagger';
 
 // Configure HTTP server
-const server = fastify.default();
+const app = fastify.default({ logger: true });
 
 routes.forEach(route => {
-	server.route(route);
+	app.route(route);
 });
 
 // Register Swagger
-server.register(swagger, Options);
+app.register(swagger, Options);
 
 const start = async (): Promise<void> => {
 	try {
-		await server.listen(3000);
-		server.swagger();
-		server.log.info(`server listening on ${server.server.address()}`);
+		await app.listen(3000);
+		app.swagger();
+		app.log.info(`server listening on ${app.server.address()}`);
 	} catch (err) {
-		server.log.error(err);
+		app.log.error(err);
 		process.exit(1);
 	}
 };
 start();
 
+export default app;
+
 // Configure DB
 mongoose
-	.connect('mongodb://localhost:27017/cars')
-	.then(() => console.log('MongoDB connected…'))
-	.catch(err => console.log(err));
+	.connect('mongodb://localhost:27017/cars', { useNewUrlParser: true, useUnifiedTopology: true })
+	.then(() => app.log.info('MongoDB connected…'))
+	.catch(err => app.log.error(err));

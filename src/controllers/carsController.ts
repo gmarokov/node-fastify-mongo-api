@@ -26,7 +26,7 @@ export const getSingleCar = async (req: FastifyRequest, reply: FastifyReply<Serv
 export const addCar = async (req: FastifyRequest, reply: FastifyReply<ServerResponse>) => {
 	try {
 		const car = new Car(req.body);
-		return car.save();
+		return await car.save();
 	} catch (err) {
 		throw boom.boomify(err);
 	}

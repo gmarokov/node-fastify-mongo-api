@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "6169c220-29d8-4bbe-a3b4-75cbac6a3c3b",
+		"name": "Node template API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/api/cars",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"z3\",\n\t\"brand\": \"BMW\",\n\t\"price\": \"7 000\",\n\t\"age\": 10,\n\t\"services\": {\n\t\t\"BMW Hamburg\": \"21/04/2020\",\n\t\t\"BMW Munchen\": \"10/02/2020\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/cars",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/cars/5e46ef066355d039880003d7",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/cars/5e46ef066355d039880003d7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cars",
+						"5e46ef066355d039880003d7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/cars",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/cars/5e46ef066355d039880003d7",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"z3\",\n\t\"brand\": \"BMW\",\n\t\"price\": \"12 000\",\n\t\"age\": 10,\n\t\"services\": {\n\t\t\"BMW Hamburg\": \"21/04/2020\",\n\t\t\"BMW Munchen\": \"10/02/2020\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/cars/5e46ef066355d039880003d7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cars",
+						"5e46ef066355d039880003d7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/cars/5e46ef066355d039880003d7",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/cars/5e46ef066355d039880003d7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cars",
+						"5e46ef066355d039880003d7"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
