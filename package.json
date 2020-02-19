@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "npm run build && node dist/index.js",
-        "start:dev": "docker-compose up -d && nodemon",
+        "start:dev": "cross-env NODE_ENV=development docker-compose up -d && nodemon",
         "build": "rimraf ./build && tsc",
         "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit",
         "coverage": "cat ./test/coverage/lcov.info | coveralls",
@@ -53,6 +53,7 @@
         "eslint-plugin-prettier": "^3.1.2",
         "fastify": "^2.12.0",
         "fastify-swagger": "^2.5.0",
+        "mongodb-memory-server": "^6.2.4",
         "mongoose": "^5.8.12"
     }
 }

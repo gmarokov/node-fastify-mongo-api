@@ -1,8 +1,10 @@
 import app from '../../src/index';
+import * as dbHandler from './../dbHandler';
 
 describe('Testing the Cars API', () => {
-	afterEach(async () => {});
-	beforeEach(async () => {});
+	beforeAll(async () => await dbHandler.connect());
+	afterAll(async () => await dbHandler.close());
+	afterEach(async () => await dbHandler.clear());
 
 	const carRequest = {
 		title: 'z3',

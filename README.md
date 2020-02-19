@@ -1,5 +1,5 @@
 # node-fastify-mongo-api
-NodeJS Restful API starter template with TypeScript, Fastify, Mongo, Jest and Swagger.
+NodeJS Restful API starter template with TypeScript, Fastify, MongoDB, Jest and Swagger.
 
 [![Build Status](https://travis-ci.com/gmarokov/node-fastify-mongo-api.svg?branch=master)](https://travis-ci.com/gmarokov/node-fastify-mongo-api)
 [![Coverage Status](https://coveralls.io/repos/github/gmarokov/node-fastify-mongo-api/badge.svg?branch=master)](https://coveralls.io/github/gmarokov/node-fastify-mongo-api?branch=master)
@@ -17,7 +17,7 @@ NodeJS Restful API starter template with TypeScript, Fastify, Mongo, Jest and Sw
 `npm run lint`
 
 ## Testing 
-Using Jest for endpoint integration testing and mocking Mongo using in memory DB. 
+Using Jest for endpoint integration testing and swaping MongoDB with in memory. 
 Code coverage report generated and consumed by [Coveralls](https://coveralls.io/). 
 `npm test`
 
