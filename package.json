@@ -7,7 +7,8 @@
         "start": "npm run build && node dist/index.js",
         "start:dev": "docker-compose up -d && nodemon",
         "build": "rimraf ./build && tsc",
-        "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit --coverage",
+        "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit",
+        "coverage": "cat ./test/coverage/lcov.info | coveralls",
         "lint": "eslint --fix {src,test,config}/**/*.{js,ts}",
         "prettier": "prettier",
         "prettier:base": "npm run prettier **/*.{js,json,scss,md,ts,html,component.html}",
@@ -25,6 +26,7 @@
     "devDependencies": {
         "@types/jest": "^25.1.2",
         "@types/node": "^13.7.1",
+        "coveralls": "^3.0.9",
         "cross-env": "^7.0.0",
         "jest": "^25.1.0",
         "nodemon": "^2.0.2",

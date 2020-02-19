@@ -1,4 +1,6 @@
 module.exports = {
+	coverageDirectory: './test/coverage/',
+	collectCoverage: true,
 	roots: ['./test'],
 	testEnvironment: 'node',
 	transform: {

@@ -13,3 +13,5 @@ before_script:
   - npm install
 os:
   - linux
+script:
+  - npm run coverage
