@@ -17,9 +17,11 @@
     },
     "keywords": [
         "node",
+        "typescript",
         "mongo",
         "mongoose",
-        "fastify"
+        "fastify",
+        "swagger"
     ],
     "author": "Georgi Marokov <georgi.marokov@gmail.com> (www.worldwildweb.dev)",
     "license": "ISC",
