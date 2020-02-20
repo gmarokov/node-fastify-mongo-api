@@ -1,12 +1,12 @@
 # node-fastify-mongo-api
-NodeJS Restful API starter template with TypeScript, Fastify, MongoDB, Jest and Swagger.
+Node.js Restful API starter template with TypeScript, Fastify, MongoDB, Jest and Swagger.
 
 [![Build Status](https://travis-ci.com/gmarokov/node-fastify-mongo-api.svg?branch=master)](https://travis-ci.com/gmarokov/node-fastify-mongo-api)
 [![Coverage Status](https://coveralls.io/repos/github/gmarokov/node-fastify-mongo-api/badge.svg?branch=master)](https://coveralls.io/github/gmarokov/node-fastify-mongo-api?branch=master)
 
 ## Requirements
-1. Docker
-2. NodeJS >= 10
+1. Node.js >= 10
+2. Docker
 
 ## Getting started
 1. Install packages:   
@@ -17,10 +17,11 @@ NodeJS Restful API starter template with TypeScript, Fastify, MongoDB, Jest and 
 `npm run lint`
 
 ## Testing 
-Using Jest for endpoint integration testing and swaping MongoDB with in memory. 
+Using Jest for endpoint integration testing and swapping MongoDB with in memory mongo server. 
 Code coverage report generated and consumed by [Coveralls](https://coveralls.io/).   
 1. Run tests with coverage:   
 `npm test`
 
 ## Documentation 
 Using Swagger for the endpoints documentation. Swagger UI available at [http://localhost:3000/documentation](http://localhost:3000/documentation)
+Additional Postman collection attached to repository. 

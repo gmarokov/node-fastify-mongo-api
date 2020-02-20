@@ -1,7 +1,7 @@
 {
     "name": "node-api-starter",
     "version": "1.0.0",
-    "description": "NodeJS Restful API starter project",
+    "description": "Node.js Restful API starter project",
     "main": "index.js",
     "scripts": {
         "start": "npm run build && node dist/index.js",
