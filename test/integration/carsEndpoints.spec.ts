@@ -3,8 +3,8 @@ import * as dbHandler from './../dbHandler';
 
 describe('Testing the Cars API', () => {
 	beforeAll(async () => await dbHandler.connect());
-	afterAll(async () => await dbHandler.close());
 	afterEach(async () => await dbHandler.clear());
+	afterAll(async () => await dbHandler.close());
 
 	const carRequest = {
 		title: 'z3',
@@ -18,6 +18,7 @@ describe('Testing the Cars API', () => {
 	};
 
 	it('Get base route should return status 404', async done => {
+		//Arrange & Act
 		const response = await app.inject({
 			method: 'GET',
 			url: '/',
@@ -29,12 +30,14 @@ describe('Testing the Cars API', () => {
 			statusCode: 404,
 		});
 
+		//Assert
 		expect(response.statusCode).toBe(404);
 		expect(response.payload).toEqual(expected);
 		done();
 	});
 
 	it('Post cars should return new car obj with status 200', async done => {
+		//Arrange & Act
 		const response = await app.inject({
 			method: 'POST',
 			payload: carRequest,
@@ -43,12 +46,14 @@ describe('Testing the Cars API', () => {
 
 		const payload = JSON.parse(response.payload);
 
+		//Assert
 		expect(response.statusCode).toBe(200);
 		expect(payload._id).not.toBeNull();
 		done();
 	});
 
 	it('Get cars should return array of cars obj with status 200', async () => {
+		//Arrange
 		const carCreationResponse = await app.inject({
 			method: 'POST',
 			payload: carRequest,
@@ -56,18 +61,22 @@ describe('Testing the Cars API', () => {
 		});
 		const car = JSON.parse(carCreationResponse.payload);
 
+		//Act
 		const response = await app.inject({
 			method: 'GET',
 			url: '/api/cars',
 		});
 
 		const cars = JSON.parse(response.payload);
+
+		//Assert
 		expect(response.statusCode).toBe(200);
 		expect(cars.length > 0).toBeTruthy();
 		expect(cars).toContainEqual(expect.objectContaining({ _id: car._id }));
 	});
 
 	it('Get single car should return car obj with status 200', async () => {
+		//Arrange
 		const carCreationResponse = await app.inject({
 			method: 'POST',
 			payload: carRequest,
@@ -75,12 +84,15 @@ describe('Testing the Cars API', () => {
 		});
 		const createdCar = JSON.parse(carCreationResponse.payload);
 
+		//Act
 		const response = await app.inject({
 			method: 'GET',
 			url: `/api/cars/${createdCar._id}`,
 		});
 
 		const car = JSON.parse(response.payload);
+
+		//Assert
 		expect(response.statusCode).toBe(200);
 		expect(car.title).not.toBeNull();
 		expect(car.brand).not.toBeNull();
@@ -89,6 +101,7 @@ describe('Testing the Cars API', () => {
 	});
 
 	it('Put car should return car obj with status 200', async () => {
+		//Arrange
 		const carCreationResponse = await app.inject({
 			method: 'POST',
 			payload: carRequest,
@@ -98,6 +111,7 @@ describe('Testing the Cars API', () => {
 		const newCarBrand = 'Toyota';
 		createdCar.brand = newCarBrand;
 
+		//Act
 		const response = await app.inject({
 			method: 'PUT',
 			payload: createdCar,
@@ -105,6 +119,8 @@ describe('Testing the Cars API', () => {
 		});
 
 		const car = JSON.parse(response.payload);
+
+		//Assert
 		expect(response.statusCode).toBe(200);
 		expect(car.title).not.toBeNull();
 		expect(car.brand).not.toBeNull();
@@ -114,6 +130,7 @@ describe('Testing the Cars API', () => {
 	});
 
 	it('Delete car should return status 200', async () => {
+		//Arrange
 		const carCreationResponse = await app.inject({
 			method: 'POST',
 			payload: carRequest,
@@ -121,11 +138,13 @@ describe('Testing the Cars API', () => {
 		});
 		const createdCar = JSON.parse(carCreationResponse.payload);
 
+		//Act
 		const response = await app.inject({
 			method: 'DELETE',
 			url: `/api/cars/${createdCar._id}`,
 		});
 
+		//Assert
 		expect(response.statusCode).toBe(200);
 	});
 });

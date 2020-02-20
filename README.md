@@ -23,5 +23,5 @@ Code coverage report generated and consumed by [Coveralls](https://coveralls.io/
 `npm test`
 
 ## Documentation 
-Using Swagger for the endpoints documentation. Swagger UI available at [http://localhost:3000/documentation](http://localhost:3000/documentation)
+Using Swagger for the endpoints documentation. Swagger UI available at [http://localhost:3000/documentation](http://localhost:3000/documentation).   
 Additional Postman collection attached to repository. 
