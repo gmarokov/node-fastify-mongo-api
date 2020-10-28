@@ -9,12 +9,12 @@ const env = process.env.NODE_ENV;
 // Configure HTTP server
 const app = fastify.default({ logger: true });
 
+// Register Swagger
+app.register(swagger, Options);
+
 routes.forEach(route => {
 	app.route(route);
 });
-
-// Register Swagger
-app.register(swagger, Options);
 
 const start = async (): Promise<void> => {
 	try {
