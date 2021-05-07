@@ -17,11 +17,11 @@ Node.js Restful API starter template with TypeScript, Fastify, MongoDB, Jest and
 `npm run lint`
 
 ## Testing 
-Using Jest for endpoint integration testing and swapping MongoDB with in memory mongo server. 
+Using Jest for endpoint integration testing and swapping MongoDB with in memory Mongo server. 
 Code coverage report generated and consumed by [Coveralls](https://coveralls.io/).   
 1. Run tests with coverage:   
 `npm test`
 
 ## Documentation 
-Using Swagger for the endpoints documentation. Swagger UI available at [http://localhost:3000/documentation](http://localhost:3000/documentation).   
+Using Swagger for the endpoints documentation. Swagger UI available at [http://localhost:3000/docs](http://localhost:3000/docs).   
 Additional Postman collection attached to repository. 

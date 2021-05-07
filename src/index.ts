@@ -6,10 +6,8 @@ import { config } from './config';
 import swagger from 'fastify-swagger';
 const env = process.env.NODE_ENV;
 
-// Configure HTTP server
+// Configure App
 const app = fastify.default({ logger: true });
-
-// Register Swagger
 app.register(swagger, Options);
 
 routes.forEach(route => {

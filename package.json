@@ -21,22 +21,23 @@
         "mongo",
         "mongoose",
         "fastify",
-        "swagger"
+        "swagger",
+        "jest"
     ],
     "author": "Georgi Marokov <georgi.marokov@gmail.com> (www.worldwildweb.dev)",
     "license": "ISC",
     "devDependencies": {
-        "@types/jest": "^25.1.2",
-        "@types/node": "^13.7.1",
-        "coveralls": "^3.0.9",
-        "cross-env": "^7.0.0",
-        "jest": "^25.1.0",
-        "nodemon": "^2.0.2",
+        "@types/jest": "^25.2.3",
+        "@types/node": "^13.13.51",
+        "coveralls": "^3.1.0",
+        "cross-env": "^7.0.3",
+        "jest": "^25.5.4",
+        "nodemon": "^2.0.7",
         "prettier": "^1.19.1",
         "rimraf": "^3.0.2",
-        "ts-jest": "^25.2.0",
-        "ts-node": "^8.6.2",
-        "typescript": "^3.7.5"
+        "ts-jest": "^25.5.1",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.9"
     },
     "repository": {
         "type": "git",
@@ -44,16 +45,16 @@
     },
     "dependencies": {
         "@types/boom": "^7.3.0",
-        "@types/mongoose": "^5.7.1",
-        "@typescript-eslint/eslint-plugin": "^2.19.2",
-        "@typescript-eslint/parser": "^2.19.2",
+        "@types/mongoose": "^5.10.5",
+        "@typescript-eslint/eslint-plugin": "^2.34.0",
+        "@typescript-eslint/parser": "^2.34.0",
         "boom": "^7.3.0",
         "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.10.0",
-        "eslint-plugin-prettier": "^3.1.2",
-        "fastify": "^2.15.1",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "fastify": "^2.15.3",
         "fastify-swagger": "^2.6.0",
-        "mongodb-memory-server": "^6.2.4",
-        "mongoose": "^5.8.12"
+        "mongodb-memory-server": "^6.9.6",
+        "mongoose": "^5.12.7"
     }
 }
