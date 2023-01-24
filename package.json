@@ -31,7 +31,7 @@
         "@types/node": "^13.13.51",
         "coveralls": "^3.1.0",
         "cross-env": "^7.0.3",
-        "jest": "^25.5.4",
+        "jest": "^29.4.0",
         "nodemon": "^2.0.20",
         "prettier": "^1.19.1",
         "rimraf": "^3.0.2",
