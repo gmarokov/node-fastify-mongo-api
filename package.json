@@ -55,6 +55,6 @@
         "fastify": "^2.15.3",
         "fastify-swagger": "^2.6.0",
         "mongodb-memory-server": "^6.9.6",
-        "mongoose": "^5.12.7"
+        "mongoose": "^5.13.15"
     }
 }
