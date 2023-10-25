@@ -34,4 +34,4 @@ jobs:
       uses: coverallsapp/github-action@v1.2.2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        repository: gmarokov/node-fastify-mongo-api
+      
