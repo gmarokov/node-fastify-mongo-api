@@ -1,8 +1,8 @@
 # node-fastify-mongo-api
 Node.js Restful API starter template with TypeScript, Fastify, MongoDB, Jest and Swagger.
 
-[![Build status](https://github.com/gmarokov/node-fastify-mongo-api/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/gmarokov/node-fastify-mongo-api/actions/workflows/node.js.yml)
-[![Coverage Status](https://coveralls.io/repos/github/gmarokov/node-fastify-mongo-api/badge.svg?branch=master)](https://coveralls.io/github/gmarokov/node-fastify-mongo-api?branch=master)
+[![Build status](https://github.com/gmarokov/node-fastify-mongo-api/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/gmarokov/node-fastify-mongo-api/actions/workflows/node.js.yml)
+[![Coverage Status](https://coveralls.io/repos/github/gmarokov/node-fastify-mongo-api/badge.svg?branch=main)](https://coveralls.io/github/gmarokov/node-fastify-mongo-api?branch=main)
 
 ## Requirements
 1. Node.js >= 10
