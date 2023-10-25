@@ -1,5 +1,22 @@
-node_modules
+/node_modules/*
+
+# build artifacts
+/public/*
+/dist/*
+
+# test reports
+/test/coverage/*
+
+# editors
 .vscode
-.git
-dist
-data
+.storybook
+.buildifchanged
+
+# custom definition files
+/src/translations/extracted/*
+
+ # Ignore all HTML files:
+*.html
+
+.gitignore
+.prettierignore

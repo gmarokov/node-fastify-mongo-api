@@ -8,10 +8,11 @@ const getCarsRoute: RouteOptions = {
 	handler: carsController.getCars,
 	schema: GetCarsSchema,
 };
+
 const getCarRoute: RouteOptions = {
 	method: 'GET',
 	url: '/api/cars/:id',
-	handler: carsController.getSingleCar,
+	handler: carsController.getCar,
 	schema: GetCarSchema,
 };
 const postCarRoute: RouteOptions = {
@@ -20,6 +21,7 @@ const postCarRoute: RouteOptions = {
 	handler: carsController.addCar,
 	schema: AddCarSchema,
 };
+
 const putCarRoute: RouteOptions = {
 	method: 'PUT',
 	url: '/api/cars/:id',
@@ -33,6 +35,12 @@ const deleteCarRoute: RouteOptions = {
 	schema: DeleteCarSchema,
 };
 
-const routes = [getCarsRoute, getCarRoute, postCarRoute, putCarRoute, deleteCarRoute];
+const routes = [
+    getCarsRoute, 
+    getCarRoute, 
+    postCarRoute, 
+    putCarRoute, 
+    deleteCarRoute
+];
 
 export default routes;

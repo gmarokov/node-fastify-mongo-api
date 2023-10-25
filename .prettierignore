@@ -1,0 +1,22 @@
+/node_modules/*
+
+# build artifacts
+/public/*
+/dist/*
+
+# test reports
+/test/coverage/*
+
+# editors
+.vscode
+.storybook
+.buildifchanged
+
+# custom definition files
+/src/translations/extracted/*
+
+ # Ignore all HTML files:
+*.html
+
+.gitignore
+.prettierignore

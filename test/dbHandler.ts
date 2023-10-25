@@ -1,32 +1,35 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 
-const mongod = new MongoMemoryServer();
+let mongod: MongoMemoryServer;
 
-export const connect = async (): Promise<void> => {
-	const uri = await mongod.getConnectionString();
+beforeAll(async () => {
+	try {
+		mongod = await MongoMemoryServer.create();
+		const uri = mongod.getUri();
+	
+		const mongooseOpts = {
+			useNewUrlParser: true
+		} as mongoose.ConnectOptions;
+	
+		await mongoose.connect(uri, mongooseOpts);
+		console.log('MongoDB InMemory connected...');
+	} catch (err) {
+		console.error(err);
+	}
+});
 
-	const mongooseOpts = {
-		useNewUrlParser: true,
-		autoReconnect: true,
-		reconnectTries: Number.MAX_VALUE,
-		reconnectInterval: 1000,
-	};
-
-	await mongoose.connect(uri, mongooseOpts);
-};
-
-export const close = async (): Promise<void> => {
+afterAll(async () => {
 	await mongoose.connection.dropDatabase();
 	await mongoose.connection.close();
 	await mongod.stop();
-};
+});
 
-export const clear = async (): Promise<void> => {
+afterEach(async () => {
 	const collections = mongoose.connection.collections;
 
 	for (const key in collections) {
 		const collection = collections[key];
 		await collection.deleteMany({});
 	}
-};
+});

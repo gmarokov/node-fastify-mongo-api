@@ -1,11 +1,6 @@
 import app from '../../src/index';
-import * as dbHandler from './../dbHandler';
 
 describe('Testing the Cars API', () => {
-	beforeAll(async () => await dbHandler.connect());
-	afterEach(async () => await dbHandler.clear());
-	afterAll(async () => await dbHandler.close());
-
 	const carRequest = {
 		title: 'z3',
 		brand: 'BMW',
@@ -17,7 +12,7 @@ describe('Testing the Cars API', () => {
 		},
 	};
 
-	it('Get base route should return status 404', async done => {
+	it('Get base route should return status 404', async () => {
 		//Arrange & Act
 		const response = await app.inject({
 			method: 'GET',
@@ -33,10 +28,9 @@ describe('Testing the Cars API', () => {
 		//Assert
 		expect(response.statusCode).toBe(404);
 		expect(response.payload).toEqual(expected);
-		done();
 	});
 
-	it('Post cars should return new car obj with status 200', async done => {
+	it('Post cars should return new car obj with status 200', async () => {
 		//Arrange & Act
 		const response = await app.inject({
 			method: 'POST',
@@ -49,7 +43,6 @@ describe('Testing the Cars API', () => {
 		//Assert
 		expect(response.statusCode).toBe(200);
 		expect(payload._id).not.toBeNull();
-		done();
 	});
 
 	it('Get cars should return array of cars obj with status 200', async () => {

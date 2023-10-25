@@ -1,55 +1,62 @@
-import boom from 'boom';
-import Car from '../models/Car';
+import Car, { ICar } from '../models/Car';
 import { Document } from 'mongoose';
-import { ServerResponse } from 'http';
 import { FastifyRequest, FastifyReply } from 'fastify';
 
-export const getCars = async (req: FastifyRequest, reply: FastifyReply<ServerResponse>): Promise<Document[]> => {
+export const getCars = async (req: FastifyRequest, reply: FastifyReply): Promise<Document[]> => {
 	try {
 		const cars = await Car.find();
 		return cars;
 	} catch (err) {
-		throw boom.boomify(err);
+		return reply.code(500).send({ error: err})
 	}
 };
 
-export const getSingleCar = async (req: FastifyRequest, reply: FastifyReply<ServerResponse>) => {
+export const getCar = async (req: FastifyRequest, reply: FastifyReply) => {
 	try {
-		const id = req.params.id;
+		const params = req.params as { id: string };
+		const id = params.id
 		const car = await Car.findById(id);
 		return car;
 	} catch (err) {
-		throw boom.boomify(err);
+		return reply.code(500).send({ error: err})
 	}
 };
 
-export const addCar = async (req: FastifyRequest, reply: FastifyReply<ServerResponse>) => {
+export const addCar = async (req: FastifyRequest, reply: FastifyReply) => {
 	try {
 		const car = new Car(req.body);
 		return await car.save();
 	} catch (err) {
-		throw boom.boomify(err);
+		return reply.code(500).send({ error: err})
 	}
 };
 
-export const updateCar = async (req: FastifyRequest, reply: FastifyReply<ServerResponse>) => {
+export const updateCar = async (req: FastifyRequest, reply: FastifyReply) => {
 	try {
-		const id = req.params.id;
-		const car = req.body;
+		const params = req.params as { id: string };
+		const id = params.id;
+		const car = req.body as ICar;
 		const { ...updateData } = car;
-		const update = await Car.findByIdAndUpdate(id, updateData, { new: true });
+		
+		const update = await Car.findByIdAndUpdate(id,  updateData, { new: true });
+
+		if (!update) {
+			return reply.status(404).send({ error: 'Car not found' });
+		}
+
 		return update;
 	} catch (err) {
-		throw boom.boomify(err);
+		return reply.code(500).send({ error: err})
 	}
 };
 
-export const deleteCar = async (req: FastifyRequest, reply: FastifyReply<ServerResponse>) => {
+export const deleteCar = async (req: FastifyRequest, reply: FastifyReply) => {
 	try {
-		const id = req.params.id;
+		const params = req.params as { id: string };
+		const id = params.id;
 		const car = await Car.findByIdAndRemove(id);
 		return car;
 	} catch (err) {
-		throw boom.boomify(err);
+		return reply.code(500).send({ error: err})
 	}
 };

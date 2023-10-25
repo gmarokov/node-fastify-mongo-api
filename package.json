@@ -1,60 +1,60 @@
 {
-    "name": "node-api-starter",
-    "version": "1.0.0",
-    "description": "Node.js Restful API starter project",
-    "main": "index.js",
-    "scripts": {
-        "start": "npm run build && node dist/index.js",
-        "start:dev": "cross-env NODE_ENV=development docker-compose up -d && nodemon",
-        "build": "rimraf ./build && tsc",
-        "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit",
-        "coverage": "cat ./test/coverage/lcov.info | coveralls",
-        "lint": "eslint --fix {src,test,config}/**/*.{js,ts}",
-        "prettier": "prettier",
-        "prettier:base": "npm run prettier **/*.{js,json,scss,md,ts,html,component.html}",
-        "prettier:write": "npm run prettier:base --write",
-        "prettier:check": "npm run prettier:base --list-different"
-    },
-    "keywords": [
-        "node",
-        "typescript",
-        "mongo",
-        "mongoose",
-        "fastify",
-        "swagger",
-        "jest"
-    ],
-    "author": "Georgi Marokov <georgi.marokov@gmail.com> (www.worldwildweb.dev)",
-    "license": "ISC",
-    "devDependencies": {
-        "@types/jest": "^25.2.3",
-        "@types/node": "^13.13.51",
-        "coveralls": "^3.1.0",
-        "cross-env": "^7.0.3",
-        "jest": "^29.4.0",
-        "nodemon": "^2.0.20",
-        "prettier": "^1.19.1",
-        "rimraf": "^3.0.2",
-        "ts-jest": "^25.5.1",
-        "ts-node": "^8.10.2",
-        "typescript": "^3.9.9"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/gmarokov/node-fastify-mongo-api.git"
-    },
-    "dependencies": {
-        "@types/boom": "^7.3.0",
-        "@types/mongoose": "^5.10.5",
-        "@typescript-eslint/eslint-plugin": "^2.34.0",
-        "@typescript-eslint/parser": "^2.34.0",
-        "boom": "^7.3.0",
-        "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.15.0",
-        "eslint-plugin-prettier": "^3.4.0",
-        "fastify": "^2.15.3",
-        "fastify-swagger": "^5.2.0",
-        "mongodb-memory-server": "^6.9.6",
-        "mongoose": "^5.13.20"
-    }
+  "name": "node-api-starter",
+  "version": "2.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=development tsc -p tsconfig.json",
+    "start": "cross-env NODE_ENV=development npm run build && node dist/index.js",
+    "start:dev": "cross-env NODE_ENV=development docker-compose up -d && npm run start",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
+    "coverage": "cat ./test/coverage/lcov.info | coveralls",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install .husky"
+  },
+  "lint-staged": {
+    "**/*.{ts,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "fastify",
+    "mongo",
+    "swagger",
+    "jest"
+  ],
+  "author": "Georgi Marokov <georgi.marokov@gmail.com> (www.worldwildweb.dev)",
+  "license": "ISC",
+  "description": "Node.js Restful API starter project",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gmarokov/node-fastify-mongo-api.git"
+  },
+  "dependencies": {
+    "@fastify/swagger": "^8.12.0",
+    "@fastify/swagger-ui": "^1.10.1",
+    "fastify": "^4.24.3",
+    "mongodb-memory-server": "^9.0.1",
+    "mongoose": "^7.6.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.6",
+    "@types/mongodb-memory-server": "^2.3.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.8.7",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "coveralls": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  }
 }

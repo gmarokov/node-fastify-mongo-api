@@ -1,7 +1,7 @@
 # node-fastify-mongo-api
 Node.js Restful API starter template with TypeScript, Fastify, MongoDB, Jest and Swagger.
 
-[![Build Status](https://travis-ci.com/gmarokov/node-fastify-mongo-api.svg?branch=master)](https://travis-ci.com/gmarokov/node-fastify-mongo-api)
+[![Build status](https://github.com/gmarokov/node-fastify-mongo-api/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/gmarokov/node-fastify-mongo-api/actions/workflows/node.js.yml)
 [![Coverage Status](https://coveralls.io/repos/github/gmarokov/node-fastify-mongo-api/badge.svg?branch=master)](https://coveralls.io/github/gmarokov/node-fastify-mongo-api?branch=master)
 
 ## Requirements
@@ -11,16 +11,19 @@ Node.js Restful API starter template with TypeScript, Fastify, MongoDB, Jest and
 ## Getting started
 1. Install packages:   
 `npm install`
+
 3. Run project:   
 `npm run start:dev`
-4. Run ESLint with Prettier for static analysis and applying consistent code formatting:   
-`npm run lint`
 
 ## Testing 
-Using Jest for endpoint integration testing and swapping MongoDB with in memory Mongo server. 
+Using Jest for endpoint integration testing and swapping MongoDB with In Memory Mongo server. 
 Code coverage report generated and consumed by [Coveralls](https://coveralls.io/).   
 1. Run tests with coverage:   
-`npm test`
+`npm run test`
+
+## Additional information
+- Pre-commit hook is configured to run ESLint and Prettier before each commit with Husky.
+- Debug configuration for VS Code is included.
 
 ## Documentation 
 Using Swagger for the endpoints documentation. Swagger UI available at [http://localhost:3000/docs](http://localhost:3000/docs).   
