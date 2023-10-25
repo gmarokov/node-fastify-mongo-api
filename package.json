@@ -6,7 +6,7 @@
     "build": "cross-env NODE_ENV=development tsc -p tsconfig.json",
     "start": "cross-env NODE_ENV=development npm run build && node dist/index.js",
     "start:dev": "cross-env NODE_ENV=development docker-compose up -d && npm run start",
-    "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit",
     "coverage": "cat ./test/coverage/lcov.info | coveralls",
     "lint-staged": "lint-staged",
     "prepare": "husky install .husky"
