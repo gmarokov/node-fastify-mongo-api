@@ -37,7 +37,7 @@
     "@fastify/swagger-ui": "^1.10.1",
     "fastify": "^4.28.1",
     "mongodb-memory-server": "^9.0.1",
-    "mongoose": "^7.6.3"
+    "mongoose": "^8.9.5"
   },
   "devDependencies": {
     "@types/jest": "^29.5.6",
